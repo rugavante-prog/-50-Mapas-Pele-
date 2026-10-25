@@ -9,6 +9,13 @@ window.PAGINA = {
   // Parcelamento exibido no Plano Completo
   parcelas: 12,
 
+  // Depoimentos REAIS de clientes (o bloco fica escondido enquanto esta lista estiver vazia).
+  // "foto" é opcional: suba a imagem em /img e coloque o nome, ex: "img/dep-maria.webp".
+  // Exemplo de formato:
+  // { texto: "O que a cliente escreveu", nome: "Maria S.", detalhe: "48 anos, professora", foto: "" },
+  depoimentos: [
+  ],
+
   // Carrosséis do bloco "Um mapa para cada etapa da sua pele".
   // Suba as imagens na pasta /img com estes nomes (ex: img/entenda-1.webp).
   // Enquanto a imagem não existir, aparece o espaço vazio.

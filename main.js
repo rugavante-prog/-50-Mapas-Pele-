@@ -38,6 +38,22 @@
     });
   }
 
+  // Depoimentos
+  var deps = (C.depoimentos || []).filter(function (d) { return d && d.texto; });
+  var depBox = document.querySelector("[data-depoimentos]");
+  if (depBox && deps.length) {
+    deps.forEach(function (d) {
+      var fig = document.createElement("figure");
+      var foto = d.foto ? '<img class="dep-foto" src="' + d.foto + '" alt="" width="64" height="64" loading="lazy">' : "";
+      fig.innerHTML = '<span class="aspas" aria-hidden="true">\u201C</span><blockquote></blockquote><figcaption>' + foto + "<span><b></b><small></small></span></figcaption>";
+      fig.querySelector("blockquote").textContent = d.texto;
+      fig.querySelector("b").textContent = d.nome || "";
+      fig.querySelector("small").textContent = d.detalhe || "";
+      depBox.appendChild(fig);
+    });
+    document.getElementById("depoimentos").hidden = false;
+  }
+
   // Contador até 23:59:59 de hoje
   var h = document.querySelector("[data-h]"), m = document.querySelector("[data-m]"), s = document.querySelector("[data-s]");
   function tick() {
