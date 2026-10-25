@@ -13,7 +13,28 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&family=Literata:opsz,wght@7..72,600;7..72,700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.webp" fetchpriority="high">
 <link rel="stylesheet" href="style.css">
+
+<!-- UTMify -->
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+
+<!-- Redirecionamento centralizado: TODO redirecionamento passa por aqui e leva os parâmetros da URL (UTM, fbclid, gclid etc.) -->
+<script>
+function redirectWithParams(destination) {
+  const currentParams = window.location.search;
+  if (!currentParams) {
+    window.location.href = destination;
+    return;
+  }
+  if (destination.includes("?")) {
+    window.location.href = destination + "&" + currentParams.substring(1);
+  } else {
+    window.location.href = destination + currentParams;
+  }
+}
+window.redirectWithParams = redirectWithParams;
+</script>
 
 <!-- PIXEL DA META: cole aqui o código do seu pixel -->
 
@@ -31,7 +52,7 @@
     <span class="badge"><span class="dia-noite" aria-hidden="true"></span>Pele 40+ • Mapas visuais</span>
     <h1>+50 mapas visuais sobre o que passar de manhã e à noite na pele depois dos 40, na ordem certa e sem gastar com o produto errado</h1>
 
-    <img class="hero-img" src="img/hero.webp" alt="Pele 40+: capa e mapas visuais das rotinas da manhã e da noite" width="1500" height="1000" fetchpriority="high">
+    <img class="hero-img" src="img/hero.webp" alt="Pele 40+: capa e mapas visuais das rotinas da manhã e da noite" width="900" height="600" fetchpriority="high" decoding="async">
 
     <ul class="checks">
       <li>Sua rotina de manhã e de noite, passo a passo</li>
@@ -183,7 +204,7 @@
 <section class="secao alt">
   <div class="wrap">
     <h2>Tudo que você vai receber</h2>
-    <div class="slot grande"><img src="img/receber.webp" alt="" onerror="this.remove()" width="800" height="800" loading="lazy"><span>Colagem do kit</span></div>
+    <div class="slot grande"><img src="img/receber.webp" alt="" onerror="this.remove()" width="800" height="800" loading="lazy" decoding="async"><span>Colagem do kit</span></div>
     <ul class="checks esq">
       <li>10 mapas Entenda sua Pele 40+</li>
       <li>10 mapas Rotina da Manhã</li>
@@ -195,25 +216,25 @@
     <!-- 11. BÔNUS -->
     <div class="bonus">
       <article>
-        <div class="slot"><img src="img/bonus-1.webp" alt="" onerror="this.remove()" width="600" height="600" loading="lazy"><span>Bônus 1</span></div>
+        <div class="slot"><img src="img/bonus-1.webp" alt="" onerror="this.remove()" width="600" height="600" loading="lazy" decoding="async"><span>Bônus 1</span></div>
         <h3>Rotina por Orçamento</h3>
         <p class="preco-bonus"><s>R$27</s> grátis</p>
         <p>Sua lista de compras pronta em 3 faixas: farmácia, intermediária e premium.</p>
       </article>
       <article>
-        <div class="slot"><img src="img/bonus-2.webp" alt="" onerror="this.remove()" width="600" height="600" loading="lazy"><span>Bônus 2</span></div>
+        <div class="slot"><img src="img/bonus-2.webp" alt="" onerror="this.remove()" width="600" height="600" loading="lazy" decoding="async"><span>Bônus 2</span></div>
         <h3>Calendário do Retinol</h3>
         <p class="preco-bonus"><s>R$27</s> grátis</p>
         <p>8 semanas pra introduzir o retinol aos poucos, sem irritar. Pronto pra imprimir.</p>
       </article>
       <article>
-        <div class="slot"><img src="img/bonus-3.webp" alt="" onerror="this.remove()" width="600" height="600" loading="lazy"><span>Bônus 3</span></div>
+        <div class="slot"><img src="img/bonus-3.webp" alt="" onerror="this.remove()" width="600" height="600" loading="lazy" decoding="async"><span>Bônus 3</span></div>
         <h3>Decodificador de Rótulos</h3>
         <p class="preco-bonus"><s>R$19</s> grátis</p>
         <p>O que olhar na embalagem antes de pagar, pra nunca mais cair em promessa vazia.</p>
       </article>
       <article>
-        <div class="slot"><img src="img/bonus-4.webp" alt="" onerror="this.remove()" width="600" height="600" loading="lazy"><span>Bônus 4</span></div>
+        <div class="slot"><img src="img/bonus-4.webp" alt="" onerror="this.remove()" width="600" height="600" loading="lazy" decoding="async"><span>Bônus 4</span></div>
         <h3>Rotina Express 5 Minutos</h3>
         <p class="preco-bonus"><s>R$19</s> grátis</p>
         <p>A versão enxuta pros dias corridos: o mínimo que faz diferença.</p>
@@ -229,7 +250,7 @@
 
     <article class="plano destaque">
       <span class="mais-vendido">Mais vendido</span>
-      <div class="slot"><img src="img/plano-completo.webp" alt="" onerror="this.remove()" width="600" height="450" loading="lazy"><span>Imagem do Plano Completo</span></div>
+      <div class="slot"><img src="img/plano-completo.webp" alt="" onerror="this.remove()" width="600" height="450" loading="lazy" decoding="async"><span>Imagem do Plano Completo</span></div>
       <h3>Plano Completo</h3>
       <p class="de">De <s>R$67,90</s> por</p>
       <p class="por">R$34,90</p>
@@ -255,7 +276,7 @@
     </article>
 
     <article class="plano">
-      <div class="slot"><img src="img/plano-basico.webp" alt="" onerror="this.remove()" width="600" height="450" loading="lazy"><span>Imagem do Plano Básico</span></div>
+      <div class="slot"><img src="img/plano-basico.webp" alt="" onerror="this.remove()" width="600" height="450" loading="lazy" decoding="async"><span>Imagem do Plano Básico</span></div>
       <h3>Plano Básico</h3>
       <p class="por">R$19,90</p>
       <ul class="lista-plano">

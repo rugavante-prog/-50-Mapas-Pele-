@@ -9,8 +9,17 @@
   document.querySelectorAll("[data-ano]").forEach(function (el) { el.textContent = hoje.getFullYear(); });
 
   // Checkout e parcelas
-  document.querySelectorAll('[data-checkout="completo"]').forEach(function (a) { a.href = C.checkoutCompleto || "#"; });
-  document.querySelectorAll('[data-checkout="basico"]').forEach(function (a) { a.href = C.checkoutBasico || "#"; });
+  // Botões de checkout: o clique sempre passa por redirectWithParams (mantém UTM, fbclid, gclid etc.)
+  var checkouts = { completo: C.checkoutCompleto, basico: C.checkoutBasico };
+  document.querySelectorAll("[data-checkout]").forEach(function (a) {
+    var destino = checkouts[a.getAttribute("data-checkout")] || "#";
+    a.href = destino;
+    a.addEventListener("click", function (e) {
+      if (!/^https?:\/\//i.test(destino)) return;
+      e.preventDefault();
+      redirectWithParams(destino);
+    });
+  });
   document.querySelectorAll("[data-parcelas]").forEach(function (el) { el.textContent = C.parcelas || 12; });
 
   // Carrosséis
@@ -22,7 +31,7 @@
       var slides = "";
       for (var i = 1; i <= c.qtd; i++) {
         slides += '<div class="slot slide"><img src="img/' + c.prefixo + "-" + i + '.webp" alt="Mapa ' + i + " — " + c.titulo +
-          '" loading="lazy" width="600" height="900" onerror="this.remove()"><span>Mapa ' + i + "</span></div>";
+          '" loading="lazy" decoding="async" width="600" height="900" onerror="this.remove()"><span>Mapa ' + i + "</span></div>";
       }
       bloco.innerHTML =
         "<h3>" + c.titulo + "</h3>" +
@@ -49,7 +58,7 @@
     deps.forEach(function (d) {
       var fig = document.createElement("figure");
       if (d.vazio) fig.className = "vazio";
-      var foto = d.foto ? '<img class="dep-foto" src="' + d.foto + '" alt="" width="64" height="64" loading="lazy">' : "";
+      var foto = d.foto ? '<img class="dep-foto" src="' + d.foto + '" alt="" width="64" height="64" loading="lazy" decoding="async">' : "";
       fig.innerHTML = '<span class="aspas" aria-hidden="true">\u201C</span><blockquote></blockquote><figcaption>' + foto + "<span><b></b><small></small></span></figcaption>";
       fig.querySelector("blockquote").textContent = d.texto;
       fig.querySelector("b").textContent = d.nome || "";
