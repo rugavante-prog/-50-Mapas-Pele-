@@ -13,10 +13,10 @@ window.PAGINA = {
   // Suba as imagens na pasta /img com estes nomes (ex: img/entenda-1.webp).
   // Enquanto a imagem não existir, aparece o espaço vazio.
   carrosseis: [
-    { titulo: "Entenda sua Pele 40+", prefixo: "entenda", qtd: 5 },
-    { titulo: "Rotina da Manhã",      prefixo: "manha",   qtd: 5 },
-    { titulo: "Rotina da Noite",      prefixo: "noite",   qtd: 5 },
-    { titulo: "Ativos Sem Mistério",  prefixo: "ativos",  qtd: 5 },
-    { titulo: "Cada Incômodo, um Mapa", prefixo: "incomodo", qtd: 5 }
+    { titulo: "Entenda sua Pele 40+", prefixo: "entenda", qtd: 2 },
+    { titulo: "Rotina da Manhã",      prefixo: "manha",   qtd: 2 },
+    { titulo: "Rotina da Noite",      prefixo: "noite",   qtd: 2 },
+    { titulo: "Ativos Sem Mistério",  prefixo: "ativos",  qtd: 2 },
+    { titulo: "Cada Incômodo, um Mapa", prefixo: "incomodo", qtd: 2 }
   ]
 };

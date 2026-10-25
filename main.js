@@ -22,7 +22,7 @@
       var slides = "";
       for (var i = 1; i <= c.qtd; i++) {
         slides += '<div class="slot slide"><img src="img/' + c.prefixo + "-" + i + '.webp" alt="Mapa ' + i + " — " + c.titulo +
-          '" loading="lazy" width="600" height="750" onerror="this.remove()"><span>Mapa ' + i + "</span></div>";
+          '" loading="lazy" width="600" height="900" onerror="this.remove()"><span>Mapa ' + i + "</span></div>";
       }
       bloco.innerHTML =
         "<h3>" + c.titulo + "</h3>" +
