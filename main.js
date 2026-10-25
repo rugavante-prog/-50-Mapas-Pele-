@@ -41,9 +41,14 @@
   // Depoimentos
   var deps = (C.depoimentos || []).filter(function (d) { return d && d.texto; });
   var depBox = document.querySelector("[data-depoimentos]");
+  if (depBox && !deps.length) {
+    // Espaços reservados até os depoimentos reais serem adicionados no config.js
+    deps = [1, 2, 3].map(function (n) { return { texto: "Depoimento " + n + " — aguardando o texto da cliente", nome: "Nome da cliente", detalhe: "idade, profissão", vazio: true }; });
+  }
   if (depBox && deps.length) {
     deps.forEach(function (d) {
       var fig = document.createElement("figure");
+      if (d.vazio) fig.className = "vazio";
       var foto = d.foto ? '<img class="dep-foto" src="' + d.foto + '" alt="" width="64" height="64" loading="lazy">' : "";
       fig.innerHTML = '<span class="aspas" aria-hidden="true">\u201C</span><blockquote></blockquote><figcaption>' + foto + "<span><b></b><small></small></span></figcaption>";
       fig.querySelector("blockquote").textContent = d.texto;
@@ -51,7 +56,6 @@
       fig.querySelector("small").textContent = d.detalhe || "";
       depBox.appendChild(fig);
     });
-    document.getElementById("depoimentos").hidden = false;
   }
 
   // Contador até 23:59:59 de hoje
