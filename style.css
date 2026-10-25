@@ -261,3 +261,8 @@ footer p { max-width: 560px; margin: 0 auto; }
 .hero-img { width: 100%; height: auto; margin: 22px 0 20px; border-radius: 16px; }
 [hidden]{display:none!important}
 .depoimentos figure.vazio { border: 2px dashed #D9BDB3; box-shadow: none; color: #A58A84; }
+
+/* Headline do hero: no máximo 5 linhas no celular */
+.headline { font-size: clamp(1.3rem, 5.6vw, 2rem); line-height: 1.24; letter-spacing: -0.015em; max-width: 520px; margin: 0 auto; }
+.headline .hl-num { color: #fff; background: var(--bago); padding: 1px 10px 3px; border-radius: 10px; -webkit-box-decoration-break: clone; box-decoration-break: clone; white-space: nowrap; }
+.headline .hl-fim { color: var(--bago); background: linear-gradient(transparent 62%, var(--mel-claro) 62%); }
