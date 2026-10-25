@@ -3,8 +3,8 @@
 // ============================================================
 window.PAGINA = {
   // Links de checkout (cole aqui os links da sua plataforma)
-  checkoutCompleto: "#",
-  checkoutBasico: "#",
+  checkoutCompleto: "https://lastlink.com/p/C8B7636B1/checkout-payment/",
+  checkoutBasico: "https://lastlink.com/p/C8A138BA9/checkout-payment/",
 
   // Parcelamento exibido no Plano Completo
   parcelas: 12,
