@@ -12,7 +12,7 @@ Suba as imagens na pasta `img/` com estes nomes (formato .webp). Enquanto a imag
 
 | Onde | Arquivo |
 |---|---|
-| Hero (colagem 2x2) | `hero-1.webp` … `hero-4.webp` (quadradas) |
+| Hero (mockup capa + mapas) | `hero.webp` (1500x1000) |
 | Carrossel Entenda sua Pele | `entenda-1.webp` … `entenda-5.webp` (4:5) |
 | Carrossel Rotina da Manhã | `manha-1.webp` … `manha-5.webp` |
 | Carrossel Rotina da Noite | `noite-1.webp` … `noite-5.webp` |
