@@ -36,14 +36,10 @@
       bloco.innerHTML =
         "<h3>" + c.titulo + "</h3>" +
         '<div class="trilho-box">' +
-        '<button class="seta ant" type="button" aria-label="Anterior">‹</button>' +
         '<div class="trilho" tabindex="0">' + slides + "</div>" +
-        '<button class="seta prox" type="button" aria-label="Próximo">›</button>' +
         "</div>";
       alvo.appendChild(bloco);
       var trilho = bloco.querySelector(".trilho");
-      bloco.querySelector(".ant").addEventListener("click", function () { trilho.scrollBy({ left: -trilho.clientWidth * 0.8, behavior: "smooth" }); });
-      bloco.querySelector(".prox").addEventListener("click", function () { trilho.scrollBy({ left: trilho.clientWidth * 0.8, behavior: "smooth" }); });
     });
   }
 
