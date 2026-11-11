@@ -47,8 +47,9 @@
   var deps = (C.depoimentos || []).filter(function (d) { return d && d.texto; });
   var depBox = document.querySelector("[data-depoimentos]");
   if (depBox && !deps.length) {
-    // Espaços reservados até os depoimentos reais serem adicionados no config.js
-    deps = [1, 2, 3].map(function (n) { return { texto: "Depoimento " + n + " — aguardando o texto da cliente", nome: "Nome da cliente", detalhe: "idade, profissão", vazio: true }; });
+    // Sem depoimentos reais no config.js: esconde a seção inteira (não mostra espaços vazios)
+    var secDep = document.getElementById("depoimentos");
+    if (secDep) secDep.hidden = true;
   }
   if (depBox && deps.length) {
     deps.forEach(function (d) {
